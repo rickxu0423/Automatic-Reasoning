@@ -76,3 +76,11 @@ Y
 Z
 W
 ```
+
+**Please have fun with it!**
+
+## Contributers:
+    1. Name: Jiyun Xu
+       NetID: 31425711
+    2. Name: Yangyang Shao
+       NetID: 31434102

@@ -24,10 +24,8 @@ alpha = getTreeList(alphaList)
 
 t = time()
 entail = modelChecking(KB, alpha, symbols, dict())
-print(" ")
 print("Model Checking Result: ", entail)
 print("Calculated in %.1fs" % (time() - t))
-print(" ")
 
 clauseSet = set()
 for R in KB:
