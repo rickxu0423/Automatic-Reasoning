@@ -2,7 +2,9 @@
 
 Use command: `python3 run.py` to run the program.\
 The first prompt asks you to input the **Knowledge Base** which should be separated by `,` \
-The second prompt asks you to input the **Alpha**
+The second prompt asks you to input the **Alpha**\
+
+**Please have fun with it!**
 
 ## Operators:
 1. Negation: `~`
@@ -76,8 +78,6 @@ Y
 Z
 W
 ```
-
-**Please have fun with it!**
 
 ## Contributers:
     1. Name: Jiyun Xu
