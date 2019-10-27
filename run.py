@@ -21,7 +21,6 @@ symbols = getSymbols(RList, alphaList)
 
 KB = getTreeList(RList)
 alpha = getTreeList(alphaList)
-#print(RList)
 
 t = time()
 entail = modelChecking(KB, alpha, symbols, dict())

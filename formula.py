@@ -69,20 +69,6 @@ class Conjunction(Formula):
             temSet.add(right)
         else:
             temSet = temSet.union(right)
-        #for l in left:
-        #    break
-        #if type(l) == frozenset:
-        #    temSet = temSet.union(left)
-        #else:
-        #    left = frozenset(left)
-        #    temSet.add(left)
-        #for r in right:
-        #    break
-        #if type(r) == frozenset:
-        #    temSet = temSet.union(right)
-        #else:
-        #    right = frozenset(right)
-        #    temSet.add(right)
         return temSet
 
 class Disjunction(Formula):

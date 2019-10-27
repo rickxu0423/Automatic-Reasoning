@@ -179,7 +179,6 @@ def toCNF(node, step):
         if node.symbol == "~":
             if type(node.left) == Negation:
                 if node.parent == None:
-                    #print(node,1)
                     node = node.left.left
                     node.parent = None
                 else:
