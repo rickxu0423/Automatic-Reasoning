@@ -1,6 +1,6 @@
 # Automatic-Reasoning
 
-Use command: **python3 run.py** to run the program.\
+Use command: `python3 run.py` to run the program.\
 The first prompt asks you to input the **Knowledge Base** which should be separated by `,` \
 The second prompt asks you to input the **Alpha**
 
@@ -10,11 +10,11 @@ The second prompt asks you to input the **Alpha**
 3. Disjunction: `v`
 4. Implication: `=>`
 5. Biconditional: `<=>`
-6. Atom: `A or P1-2 or Mythical` is acceptable, but should not include any symbol includes: `',', 'v', '^', '=', '<', '>'`
+6. Atom: `A or P1-2 or Mythical` is acceptable, but should not include any symbol includes: `'~', ',', 'v', '^', '=', '<', '>'`
 **Should not include any space when you type into logic sentences**\
 Beacuse the project uses **Binary Tree**, please always add **brackets**!
 ## A clear input example would be:
-`(Av~BvC)=>D` should be writen as: `((Av~B)vC)=>D`
+`(Av~BvC)=>D,A^B^C` should be writen as: `((Av~B)vC)=>D,(A^B)^C`
 
 ## Exercises:
 ### 1. Modus Ponens:
