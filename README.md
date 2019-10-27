@@ -51,6 +51,7 @@ Horned
 
 ### 4. The Doors of Enlightenment:
 **(a) Smullyan's problem** \
+\
 **KB:** 
 ```
 A<=>X, B<=>(YvZ), C<=>(A^B), D<=>(X^Y), E<=>(X^Z), F<=>(DvE), G<=>(C=>F), H<=>((G^H)=>A)
@@ -63,6 +64,7 @@ Z
 W
 ```
 **(b) Liu's problem** \
+\
 **KB:**
 ```
 A<=>X,H<=>((G^H)=>A),C<=>(A^M),G<=>(C=>N)
