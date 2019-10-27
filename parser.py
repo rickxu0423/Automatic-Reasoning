@@ -277,11 +277,12 @@ def toCNF(node, step):
     node = findRoot(node)
     return node
 
-def CNFTree_print(node):
-    if not node: return None
-    print(node.symbol)
-    CNFTree_print(node.left)
-    CNFTree_print(node.right)
+def findError(node):
+    if not node: return False
+    if node.symbol == "v" and (node.left.symbol == "^" or node.right.symbol == "^"):
+        return True
+    findError(node.left)
+    findError(node.right)
 
 
 

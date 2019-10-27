@@ -7,6 +7,8 @@ def resolution(clauseSet):
             Ci = set(pair[0])
             Cj = set(pair[1])
             resolvents = check(Ci, Cj)
+            if len(resolvents) == 0:
+                continue
             for stuff in resolvents:
                 if len(stuff) == 0:
                     return True
@@ -18,6 +20,8 @@ def resolution(clauseSet):
 
 def check(Ci, Cj):
     clause = set()
+    if len(Ci) > 2 and len(Cj) > 2:
+        return clause  
     for i in Ci:
         for j in Cj:
             if i == "~" + j or "~" + i == j:
@@ -26,8 +30,5 @@ def check(Ci, Cj):
                 Cj_new = set(Cj)
                 Cj_new.remove(j)
                 clause.add(frozenset(Ci_new.union(Cj_new)))
-    
-    clause.add(frozenset(Ci.union(Cj)))
-            
     return clause
         

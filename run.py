@@ -1,4 +1,4 @@
-from parser import splitString, getTreeList, getSymbols, toCNF, CNFTree_print
+from parser import splitString, getTreeList, getSymbols, toCNF, findError
 from modelChecking import modelChecking
 from resolution import resolution
 from time import time
@@ -15,6 +15,7 @@ symbols = getSymbols(RList, alphaList)
 
 KB = getTreeList(RList)
 alpha = getTreeList(alphaList)
+#print(RList)
 
 t = time()
 entail = modelChecking(KB, alpha, symbols, dict())
@@ -32,13 +33,19 @@ for R in KB:
                 CNFTree = toCNF(CNFTree, i) 
                 if CNFTree.symbol != "~" or CNFTree.left.symbol != "~":
                     break
+        elif i == 3:
+            error = True
+            while error:
+                CNFTree = toCNF(CNFTree, i) 
+                error = findError(CNFTree)
         else:
             CNFTree = toCNF(CNFTree, i)
-    clauses = CNFTree.generateClauses(set())
+    clauses = CNFTree.generateClauses(set())  
+    if type(clauses) != set:
+        clauses = {clauses}
     for clause in clauses:
-        if type(clause) != frozenset:
-            clause = clause.split(',')
-        clauseSet.add(frozenset(clause))
+        clauseSet.add(clause)
+
 
 alphaReverseList = list()
 for alpha in alphaList:
@@ -55,13 +62,18 @@ for alphaReverse in alphaReverse:
                 CNFTree = toCNF(CNFTree, i) 
                 if CNFTree.symbol != "~" or CNFTree.left.symbol != "~":
                     break
+        elif i == 3:
+            error = True
+            while error:
+                CNFTree = toCNF(CNFTree, i) 
+                error = findError(CNFTree)
         else:
             CNFTree = toCNF(CNFTree, i)
     clauses = CNFTree.generateClauses(set())
+    if type(clauses) != set:
+        clauses = {clauses}
     for clause in clauses:
-        if type(clause) != frozenset:
-            clause = clause.split(',')
-        clauseSet.add(frozenset(clause))
+        clauseSet.add(clause)
 
 t = time()
 print("Resolution Result: ", resolution(clauseSet))

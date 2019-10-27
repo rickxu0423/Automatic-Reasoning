@@ -34,7 +34,8 @@ class Atom(Formula):
     def calculate(self, data):
         return data[self.symbol]
     def generateClauses(self, temSet):
-        return set(self.symbol)
+        symbol = self.symbol.split(',')
+        return frozenset(symbol)
 
 
 class Negation(Formula):
@@ -46,7 +47,7 @@ class Negation(Formula):
     def generateClauses(self, temSet):
         temSymbol = "~"+ self.left.symbol
         symbol = temSymbol.split(',')
-        return set(symbol)
+        return frozenset(symbol)
 
 class Conjunction(Formula):
     def __init__(self, tree=None, symbol=None, parent=None, left=None, right=None):
@@ -60,20 +61,28 @@ class Conjunction(Formula):
     def generateClauses(self, temSet):
         left = self.left.generateClauses(temSet)
         right = self.right.generateClauses(temSet)
-        for l in left:
-            break
-        if type(l) == frozenset:
-            temSet = temSet.union(left)
-        else:
-            left = frozenset(left)
+        if type(left) == frozenset:
             temSet.add(left)
-        for r in right:
-            break
-        if type(r) == frozenset:
-            temSet = temSet.union(right)
         else:
-            right = frozenset(right)
+            temSet = temSet.union(left)
+        if type(right) == frozenset:
             temSet.add(right)
+        else:
+            temSet = temSet.union(right)
+        #for l in left:
+        #    break
+        #if type(l) == frozenset:
+        #    temSet = temSet.union(left)
+        #else:
+        #    left = frozenset(left)
+        #    temSet.add(left)
+        #for r in right:
+        #    break
+        #if type(r) == frozenset:
+        #    temSet = temSet.union(right)
+        #else:
+        #    right = frozenset(right)
+        #    temSet.add(right)
         return temSet
 
 class Disjunction(Formula):
@@ -85,9 +94,11 @@ class Disjunction(Formula):
             return False
         else:
             return True
-    def generateClauses(self,temSet):
-        
-        return self.left.generateClauses(temSet).union(self.right.generateClauses(temSet))
+    def generateClauses(self,temSet): 
+        left = self.left.generateClauses(temSet)
+        right = self.right.generateClauses(temSet)
+        result = frozenset(set(left).union(set(right)))
+        return result
 
 class Implication(Formula):
     def __init__(self, tree=None, symbol=None, parent=None, left=None, right=None):
