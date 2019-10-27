@@ -11,7 +11,7 @@ The second prompt asks you to input the **Alpha**
 4. Implication: `=>`
 5. Biconditional: `<=>`
 6. Atom: `A or P1-2 or Mythical` is acceptable, but should not include any symbol includes: `'~', ',', 'v', '^', '=', '<', '>'`
-**Should not include any space when you type into logic sentences**\
+Should not include any **space** when you type into logic sentences\
 Beacuse the project uses **Binary Tree**, please always add **brackets**!
 ## A clear input example would be:
 `(Av~BvC)=>D,A^B^C` should be writen as: `((Av~B)vC)=>D,(A^B)^C`
@@ -50,19 +50,19 @@ Horned
 ```
 
 ### 4. The Doors of Enlightenment:
-**(a) Smullyan's problem**
+**(a) Smullyan's problem** \
 **KB:** 
 ```
 A<=>X, B<=>(YvZ), C<=>(A^B), D<=>(X^Y), E<=>(X^Z), F<=>(DvE), G<=>(C=>F), H<=>((G^H)=>A)
 ```
-Alpha:
+**Alpha:**
 ```
 X
 Y
 Z
 W
 ```
-**(b) Liu's problem**
+**(b) Liu's problem** \
 **KB:**
 ```
 A<=>X,H<=>((G^H)=>A),C<=>(A^M),G<=>(C=>N)
