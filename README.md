@@ -15,7 +15,7 @@ The second prompt asks you to input the **Alpha**
 6. Atom: `A or P1-2 or Mythical` is acceptable, but should not include any symbol includes: `'~', ',', 'v', '^', '=', '<', '>'`
 Should not include any **space** when you type into logic sentences\
 Beacuse the project uses **Binary Tree**, please always add **brackets**!
-## A clear input example would be:
+## Input Example:
 `(Av~BvC)=>D,A^B^C` should be writen as: `((Av~B)vC)=>D,(A^B)^C`
 
 ## Exercises:
