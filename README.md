@@ -1,7 +1,7 @@
 # Automatic-Reasoning
 
 Use command: **python3 run.py** to run the program.\
-The first prompt asks you to input the **Knowledge Base** which should be separated by `,`\ 
+The first prompt asks you to input the **Knowledge Base** which should be separated by `,` \
 The second prompt asks you to input the **Alpha**
 
 ## Operators:
@@ -14,38 +14,35 @@ The second prompt asks you to input the **Alpha**
 **Should not include any space when you type into logic sentences**\
 Beacuse the project uses **Binary Tree**, please always add **brackets**!
 ## A clear input example would be:
-`(Av~BvC)=>D`\
-should be writen as:\
-'''
-((Av~B)vC)=>D
-'''
+`(Av~BvC)=>D` should be writen as: `((Av~B)vC)=>D`
 
-## 1. Modus Ponens:
-KB:\
+## Exercises:
+### 1. Modus Ponens:
+**KB:**
 ```
 P,P=>Q
 ```
-Alpha:\
+**Alpha:**
 ```
 Q
 ```
 
-## 2. Wumpus Word(Simple):
-### KB: 
+### 2. Wumpus Word(Simple):
+**KB:**
 ```
 ~P1-1,B1-1<=>(P1-2vP2-1),B2-1<=>((P1-1vP2-2)vP3-1),~B1-1,B2-1
 ```
-### Alpha: 
+**Alpha:**
 ```
 P1-2
 ```
 
-## 3. Horn Clauses:
-### KB:
+### 3. Horn Clauses:
+**KB:**
 ```
 Mythical=>~Mortal, ~Mythical=>(Mortal^Mammal), (~MortalvMammal)=>Horned, Horned=>Magical
 ```
-### Alpha:
+**Alpha:**
 ```
 Mythical
 Magical
@@ -54,11 +51,11 @@ Horned
 
 ### 4. The Doors of Enlightenment:
 **(a) Smullyan's problem**
-### KB: 
+**KB:** 
 ```
 A<=>X, B<=>(YvZ), C<=>(A^B), D<=>(X^Y), E<=>(X^Z), F<=>(DvE), G<=>(C=>F), H<=>((G^H)=>A)
 ```
-### Alpha:
+Alpha:
 ```
 X
 Y
@@ -66,11 +63,11 @@ Z
 W
 ```
 **(b) Liu's problem**
-### KB: 
+**KB:**
 ```
 A<=>X,H<=>((G^H)=>A),C<=>(A^M),G<=>(C=>N)
 ```
-### Alpha:
+**Alpha:**
 ```
 X
 Y
