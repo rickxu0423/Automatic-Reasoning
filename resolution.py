@@ -4,8 +4,24 @@ def resolution(clauseSet):
     new = set()
     while 1:
         for pair in itertools.combinations(clauseSet, 2):
+            m = 0
             Ci = set(pair[0])
+            for a in Ci:
+                for b in Ci:
+                    if a == "~" + b or "~" + b == a:
+                        m += 1
+            if m > 0:
+                m = 0
+                continue
+            
             Cj = set(pair[1])
+            for a in Cj:
+                for b in Cj:
+                    if a == "~" + b or "~" + b == a:
+                        m += 1
+            if m > 0:
+                m = 0
+                continue
             resolvents = check(Ci, Cj)
             if len(resolvents) == 0:
                 continue
