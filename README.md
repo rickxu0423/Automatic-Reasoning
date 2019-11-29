@@ -19,7 +19,7 @@ Clauses are represented as **Frozenset** which means (KB^\~a) is a big set of fr
 
 __4. CNF Formula:__
 The same data structure as **Formula**</br>
-Using function **toCNF** to transfer the original formula to CNF one
+Use function **toCNF** to transfer the original formula to CNF one
 
 Operators
 ------------------------------
@@ -49,6 +49,7 @@ Exercises
 
 ### 3. Horn Clauses:
 >>Description:</br>
+    </br>
     If the unicorn is mythical, then it is immortal, but if it is not mythical, then it is a mortal mammal. If the unicorn is either immortal or a mammal, then it is horned. The unicorn is magical if it is horned.</br>
     (a) Can we prove that the unicorn is mythical?</br>
     (b) Can we prove that the unicorn is magical?</br>
@@ -59,6 +60,7 @@ Exercises
 
 ### 4. The Doors of Enlightenment:
 >>Description:</br>
+    </br>
     There are four doors X, Y , Z, and W leading out of the Middle Sanctum. At least one of them leads to the Inner Sanctum. If you enter a wrong door, you will be devoured by a fierce dragon. Well, there were eight priests A, B, C, D, E, F, G, and H, each of whom is either a knight or a knave. (Knights always tell the truth and knaves always lie.) They made the following statements to the philosopher:</br>
     • A: X isagooddoor.</br>
     • B: AtleastoneofthedoorsY orZ isgood.</br>
@@ -71,14 +73,14 @@ Exercises
     </br>
 
 __(a) Smullyan's problem__
->>
-    Which door should the philosopher choose?
+>>Which door should the philosopher choose?
 
 **KB:** `A<=>X, B<=>(YvZ), C<=>(A^B), D<=>(X^Y), E<=>(X^Z), F<=>(DvE), G<=>(C=>F), H<=>((G^H)=>A)`</br>
 **Alpha:**: `X` or `Y` or `Z` or `W`</br>
 
 __(b) Liu's problem__
->>
+>>Description:</br>
+    </br>
     The philosopher lacked concentration. All he heard was the first statement (A’s) and the last statement (H’s) plus two fragments:</br>
     • C: A and ...are both knights.</br>
     • G: IfC isaknight,...</br>
