@@ -6,24 +6,20 @@ Brief Introduction
 This project implemented two inference methods (Model Checking and Resolution) for **Propositional Logic** and demonstrate them on some example problems.
 
 ## Key Data Structures:
+![binary-tree](/images/binary-tree.png)</br>
+
 __1. Formula:__
 We use Binary Tree to represent formula. For example, `A=>(Bv~CvA)` can be represented as:</br>
-![binary-tree](/images/binary-tree.png)</br>
+
 __2. Models:__
 Models are represented as Dictionary which looks like: **{“A”: True, “B”: False, “C”: True}** and such dictionary provides the value to the leaf nodes which are Atoms when calling function **Calculate** during Model Checking which returns value from leaf to node level by level **recursively**.</br>
+
 __3. Clauses:__
 Clauses are represented as **Frozenset** which means (KB^\~a) is a big set of frozensets. For example: (AvBv~C)^D is represented as: { frozenset({ “A”, “B”, “~C” }), frozenset({ “D” }) }</br>
+
 __4. CNF Formula:__
 The same data structure as **Formula**</br>
 Using function **toCNF** to transfer the original formula to CNF one
-
-How to Run Automatic-Reasoning
-------------------------------
-Use command: `python3 run.py` to run the program.\
-The first prompt asks you to input the **Knowledge Base** which should be separated by `,` \
-The second prompt asks you to input the **Alpha**
-
-**Please have fun with it!**
 
 Operators
 ------------------------------
@@ -52,7 +48,7 @@ Exercises
 
 
 ### 3. Horn Clauses:
->>
+>>Description:</br>
     If the unicorn is mythical, then it is immortal, but if it is not mythical, then it is a mortal mammal. If the unicorn is either immortal or a mammal, then it is horned. The unicorn is magical if it is horned.</br>
     (a) Can we prove that the unicorn is mythical?</br>
     (b) Can we prove that the unicorn is magical?</br>
@@ -62,7 +58,7 @@ Exercises
 **Alpha:** `Mythical` or `Magical` or `Horned`</br>
 
 ### 4. The Doors of Enlightenment:
->>
+>>Description:</br>
     There are four doors X, Y , Z, and W leading out of the Middle Sanctum. At least one of them leads to the Inner Sanctum. If you enter a wrong door, you will be devoured by a fierce dragon. Well, there were eight priests A, B, C, D, E, F, G, and H, each of whom is either a knight or a knave. (Knights always tell the truth and knaves always lie.) They made the following statements to the philosopher:</br>
     • A: X isagooddoor.</br>
     • B: AtleastoneofthedoorsY orZ isgood.</br>
@@ -90,3 +86,11 @@ __(b) Liu's problem__
 
 **KB:** `A<=>X,H<=>((G^H)=>A),C<=>(A^M),G<=>(C=>N)`</br>
 **Alpha:** `X` or `Y` or `Z` or `W`</br>
+
+How to Run Automatic-Reasoning
+------------------------------
+Use command: `python3 run.py` to run the program.</br>
+The first prompt asks you to input the **Knowledge Base** which should be separated by `,` </br>
+The second prompt asks you to input the **Alpha**</br>
+
+**Please have fun with it!**
