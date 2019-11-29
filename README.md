@@ -3,13 +3,13 @@ Automatic-Reasoning
 
 Brief Introduction
 ------------------------------
-This project implements two inference methods (Model Checking and Resolution) for **Propositional Logic** and demonstrate them on some example problems. For extra credit, this project implements a parser for WFFs which means it is smart enough to operate **ASK** and **TELL**! In addition, it also implements CNF conversion for WFF. I wrote a module which automatically converts an underlying knowledge base into conjunctive normal form.
+This project implements two inference methods (Model Checking and Resolution) for **Propositional Logic** and demonstrate them on some example problems. For extra credit, this project implements a **parser** for WFFs which means it is smart enough to operate **ASK** and **TELL**! In addition, it also implements **CNF conversion** for WFF. I wrote a module which automatically converts an underlying knowledge base into conjunctive normal form.
 
 ## Key Data Structures:
-![binary-tree](/images/binary-tree.png =250*250)</br>
 
 __1. Formula:__
-We use Binary Tree to represent formula. For example, `A=>(Bv~CvA)` can be represented as:</br>
+Use Binary Tree to represent formula. For example, `A=>(Bv~CvA)` can be represented as:</br>
+![binary-tree](/images/binary-tree.png)</br>
 
 __2. Models:__
 Models are represented as Dictionary which looks like: **{“A”: True, “B”: False, “C”: True}** and such dictionary provides the value to the leaf nodes which are Atoms when calling function **Calculate** during Model Checking which returns value from leaf to node level by level **recursively**.</br>
